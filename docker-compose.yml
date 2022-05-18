@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  server:
+    # 构建目录
+    build:
+      context: .
+      dockerfile: dockerfile
+    # 容器名
+    container_name: 'blue-friend-server'
+    # 暴露端口
+    expose:
+      - 4200
+    ports:
+      - 4200:4200
+    # 环境变量
+    environment:
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: blue-friend-postgres
+    restart: always
+    ports: 
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: pass123
