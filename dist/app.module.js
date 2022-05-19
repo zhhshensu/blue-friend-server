@@ -34,8 +34,6 @@ AppModule = __decorate([
                 inject: [config_1.ConfigService],
                 useFactory: (configService) => {
                     const { url = '', host = 'localhost', port = 5432, username = 'postgres', password, database, synchronize, ssl, } = configService.get('db');
-                    console.log(configService.get('db'));
-                    console.log(ssl);
                     return {
                         url,
                         type: 'postgres',
