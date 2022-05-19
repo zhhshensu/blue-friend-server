@@ -18,7 +18,7 @@ import { RentModule } from './rent/rent.module';
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
-      envFilePath: '.env', //
+      // envFilePath: '.env', //
     }),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],

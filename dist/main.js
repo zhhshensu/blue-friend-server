@@ -8,6 +8,7 @@ async function bootstrap() {
     });
     app.enableCors();
     await app.listen(4100);
+    console.log('process', process);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
