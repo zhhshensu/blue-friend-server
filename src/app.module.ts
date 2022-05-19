@@ -24,6 +24,7 @@ import { RentModule } from './rent/rent.module';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
         const {
+          url = '',
           host = 'localhost',
           port = 5432,
           username = 'postgres',
@@ -32,6 +33,7 @@ import { RentModule } from './rent/rent.module';
           synchronize,
         } = configService.get('db');
         return {
+          url,
           type: 'postgres',
           host,
           port,
@@ -40,6 +42,9 @@ import { RentModule } from './rent/rent.module';
           database,
           autoLoadEntities: true,
           synchronize,
+          ssl: {
+            rejectUnauthorized: false, // https://stackoverflow.com/questions/66086508/nestjs-typeormmodule-unable-to-connect-to-the-database
+          },
         };
       },
     }),
