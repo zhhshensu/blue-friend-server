@@ -10,7 +10,11 @@ exports.default = () => ({
         password: process.env.DATABASE_PASSWORD,
         database: process.env.DATABASE_NAME,
         synchronize: process.env.NODE_ENV === 'development' ? true : false,
-        ssl: process.env.DATABASE_URL ? true : false,
+        ssl: process.env.DATABASE_URL
+            ? {
+                rejectUnauthorized: false,
+            }
+            : false,
     },
     multerDest: process.env.MULTER_DEST,
 });

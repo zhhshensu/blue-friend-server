@@ -8,7 +8,9 @@ declare const _default: () => {
         password: string;
         database: string;
         synchronize: boolean;
-        ssl: boolean;
+        ssl: boolean | {
+            rejectUnauthorized: boolean;
+        };
     };
     multerDest: string;
 };
