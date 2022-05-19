@@ -37,6 +37,13 @@ npx typeorm migration:create
 ```
 
 
-### 部署问题
+## 部署
+
+### Heroku
+
+- Heroku account
+
+#### deploy issues
 - https://www.walkerjones.co/posts/nestjs-postgres-heroku
 - https://medium.com/jason-read-code/%E4%B8%80%E6%AD%A5%E4%B8%80%E6%AD%A5%E5%B0%87-nestjs-%E9%83%A8%E7%BD%B2%E5%88%B0-heroku-7921438103a0
+- App crashed https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl
