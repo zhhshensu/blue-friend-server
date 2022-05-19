@@ -31,6 +31,7 @@ import { RentModule } from './rent/rent.module';
           password,
           database,
           synchronize,
+          ssl,
         } = configService.get('db');
         return {
           url,
@@ -42,9 +43,7 @@ import { RentModule } from './rent/rent.module';
           database,
           autoLoadEntities: true,
           synchronize,
-          ssl: {
-            rejectUnauthorized: false, // https://stackoverflow.com/questions/66086508/nestjs-typeormmodule-unable-to-connect-to-the-database
-          },
+          ssl,
         };
       },
     }),

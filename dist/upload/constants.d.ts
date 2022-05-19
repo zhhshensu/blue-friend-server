@@ -1,1 +1,1 @@
-export declare const staticBaseUrl = "http://localhost:4100/static/";
+export declare const staticBaseUrl: string;

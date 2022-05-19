@@ -33,8 +33,11 @@ AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRootAsync({
                 inject: [config_1.ConfigService],
                 useFactory: (configService) => {
-                    const { host = 'localhost', port = 5432, username = 'postgres', password, database, synchronize, } = configService.get('db');
+                    const { url = '', host = 'localhost', port = 5432, username = 'postgres', password, database, synchronize, ssl, } = configService.get('db');
+                    console.log(configService.get('db'));
+                    console.log(ssl);
                     return {
+                        url,
                         type: 'postgres',
                         host,
                         port,
@@ -43,6 +46,7 @@ AppModule = __decorate([
                         database,
                         autoLoadEntities: true,
                         synchronize,
+                        ssl,
                     };
                 },
             }),
